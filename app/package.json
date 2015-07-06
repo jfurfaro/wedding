@@ -5,7 +5,12 @@
   "main": "server.js",
   "private": true,
   "scripts": {
-      "start": "node server.js"
+    "start": "node server.js"
   },
-  "author": "Joe Furfaro"
+  "author": "Joe Furfaro",
+  "dependencies": {
+    "body-parser": "^1.13.2",
+    "express": "^4.13.0",
+    "rethinkdb": "^2.0.2"
+  }
 }
