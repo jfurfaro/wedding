@@ -1,0 +1,11 @@
+{
+  "name": "wedding-rsvp",
+  "version": "1.0.0",
+  "description": "Wedding RSVP Site",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+      "start": "node server.js"
+  },
+  "author": "Joe Furfaro"
+}
