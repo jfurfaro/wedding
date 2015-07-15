@@ -1,0 +1,42 @@
+@mobile: 600px;
+
+// Grid
+.make-row(@padding: 1em) {
+	margin-left: -@padding;
+	margin-right: -@padding;
+	.clearfix();
+}
+.make-column(@columns, @total-columns: 12, @breakpoint: @mobile, @padding: 1em) {
+	@media (min-width: @breakpoint) {
+		float: left;
+		width: percentage(@columns / @total-columns);
+	}
+
+	min-height: 1px;
+	padding-left: @padding;
+	padding-right: @padding;
+	box-sizing: border-box;
+}
+.make-column-offset(@columns, @total-columns: 12, @breakpoint: @mobile, @padding: 1em) {
+	@media (min-width: @breakpoint) {
+		margin-left: percentage(@columns / @total-columns);
+	}
+}
+
+.clearfix() {
+	&:before,
+	&:after {
+		content: " "; // 1
+		display: table; // 2
+		line-height: 0;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+body {
+	p {
+		font-size: 14px;
+	}
+}
