@@ -5,12 +5,14 @@
   "main": "server.js",
   "private": true,
   "scripts": {
-    "start": "node server.js"
+    "start": "node app/server.js"
   },
   "author": "Joe Furfaro",
   "dependencies": {
     "body-parser": "^1.13.2",
+    "consolidate": "^0.13.1",
     "express": "^4.13.0",
+    "handlebars": "^3.0.3",
     "rethinkdb": "^2.0.2"
   },
   "devDependencies": {
@@ -24,6 +26,9 @@
     "gulp-notify": "^2.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^1.2.0",
-    "vinyl-transform": "^1.0.0"
+    "jquery": "^2.1.4",
+    "node-notifier": "^4.2.3",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
   }
 }
