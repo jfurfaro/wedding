@@ -33,7 +33,7 @@ gulp.task('compileLess', function(){
 });
 
 gulp.task('browserify', function(){
-	return browserify('src/script.js')
+	return browserify('src/script.js', {paths: ['./node_modules']})
 		.bundle().on('error', handleError)
 		.pipe(source('script.js'))
 		.pipe(buffer())
