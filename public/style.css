@@ -26,7 +26,7 @@
   clear: both;
 }
 body {
-  font: 500 100% 'freight-display-pro', 'Georgia', 'Times New Roman', serif;
+  font: 400 100% 'freight-display-pro', 'Georgia', 'Times New Roman', serif;
   color: #3c3c3c;
   -webkit-font-smoothing: antialiased;
 }
@@ -43,6 +43,11 @@ h2 {
   /* 28/16 */
   line-height: 1.2em;
   color: #ffffff;
+}
+p {
+  font-size: 1.375em;
+  /* 22/16 */
+  line-height: 1.7em;
 }
 input[type='text'],
 input[type='tel'],
@@ -114,7 +119,7 @@ header {
   box-sizing: border-box;
   height: 10vh;
   background: #ffe24c;
-  transition: height 300ms;
+  transition: height 300ms, box-shadow 300ms;
 }
 header nav ul {
   margin: 0;
@@ -158,7 +163,33 @@ header.stuck {
   height: 7vh;
   top: 0;
   left: 0;
+  box-shadow: 0 -3px 8px 2px #666666;
 }
 header.stuck a {
   line-height: 7vh;
+}
+#details .map {
+  min-height: 1px;
+  padding-left: 1em;
+  padding-right: 1em;
+  box-sizing: border-box;
+  height: 300px;
+}
+@media (min-width: 600px) {
+  #details .map {
+    float: left;
+    width: 50%;
+  }
+}
+#details address {
+  min-height: 1px;
+  padding-left: 1em;
+  padding-right: 1em;
+  box-sizing: border-box;
+}
+@media (min-width: 600px) {
+  #details address {
+    float: left;
+    width: 33.33333333%;
+  }
 }
