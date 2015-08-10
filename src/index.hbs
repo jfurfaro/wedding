@@ -19,7 +19,7 @@
 	<header>
 		<nav class="container">
 			<ul>
-				<li><a href="#details">Festivities &amp; Details</a></li>
+				<li><a href="#details">Festivities</a></li>
 				<li><a href="#travel">Travel</a></li>
 				<li><a href="#wedding-party">Wedding Party</a></li>
 				<li><a href="#registry">Registry</a></li>
@@ -33,16 +33,23 @@
 			<div class="container">
 				<h3>Festivities &amp; Details</h3>
 				<div class="row">
-					<div class="map"></div>
-					<address>
-						Leo Carrillo Ranch<br>
-						6200 Flying Leo Carrillo Lane<br>
-						Carlsbad, CA 92113
-					</address>
+					<div id="leo-carrillo">
+						<div class="img-wrap">
+							<img src="/images/leo-carrillo.jpg">
+						</div>
+					</div>
+					<div id="venue-description">
+						<p>
+							Nestled in eastern Carlsbad, Leo Carrillo Ranch is a Historical &amp; National Park located approximately 40 miles north of San Diego.  Once a vacation ranch to actor Leo Carrillo, of mid 1950’s Hollywood fame, the park is meticulously landscaped and home to free roaming peacocks, and over 4 miles of walking trails.
+						</p>
+						<address>
+							Leo Carrillo Ranch<br>
+							6200 Flying Leo Carrillo Lane<br>
+							Carlsbad, CA 92113<br>
+							<a href="https://www.google.com/maps/place/Leo+Carrillo+Ranch+Historic+Park/@33.1189606,-117.2371139,15z/data=!4m2!3m1!1s0x0:0x94f7d5714196d1a" target="_blank">View in Google Maps</a>
+						</address>
+					</div>
 				</div>
-				<p>
-					Nestled in Carlsbad, Leo Carrillo Ranch is a Historical &amp; National Park located 40 miles north of San Diego.  Once a vacation ranch to actor Leo Carrillo, of mid 1950’s Hollywood fame, the park is meticulously landscaped and home to free roaming peacocks, and over 4 miles of walking trails.
-				</p>
 				<p>
 					Both the ceremony and the reception will be held outdoors, so we recommend wearing layers to be comfortable in the afternoon sun, and also once the sun goes down. The 27 acres of this historical park is made of irregular earthen and paved surfaces. It is recommended that you wear appropriate shoes for the uneven terrain.
 				</p>
@@ -73,6 +80,12 @@
 						<h4>Horton Grand Hotel</h4>
 					</div>
 				</div>
+
+				<form action="/bus" method="POST">
+					<input type="text" name="passengers[]">
+					<input type="text" name="passengers[]">
+					<button type="submit">Submit</button>
+				</form>
 			</div>
 		</section>
 
@@ -122,7 +135,7 @@
 			<div class="container">
 				<h3>Registry</h3>
 				<p>
-					Instead of having a million different sites and stores, we've compiled one registry list to rule them all.
+					While gifts are unnecessary, we have assembled a registry per request of friends and family. We are not registered at any place in-particular, but do have a few items on a universal website located here: <a href="http://www.myregistry.com/public/kandjgethitched" target="_blank">http://www.myregistry.com/public/kandjgethitched</a>  
 				</p>
 			</div>
 		</section>
@@ -131,7 +144,7 @@
 			<div class="container">
 				<h3>Add to Our Story</h3>
 				<p>
-					While we politely ask that you refrain from cell phone use and taking photos during the actual ceremony (trust us, our photographer is really great and you'll all be able to download photos!), we'd LOVE for you to take photos and share them using the <span class="hashtag">#katieandjoegethitched</span> hashtag across all social media!
+					We politely ask that you refrain from cell phone use and taking photos during the actual ceremony (trust us, our photographer is really great and you'll all be able to download photos!), but we'd LOVE for you to take photos at the reception and share them using the <span class="hashtag">#katieandjoegethitched</span> hashtag across all social media!
 				</p>
 			</div>
 		</section>

@@ -9,11 +9,12 @@
   },
   "author": "Joe Furfaro",
   "dependencies": {
-    "body-parser": "^1.13.2",
+    "body-parser": "^1.13.3",
     "consolidate": "^0.13.1",
     "express": "^4.13.0",
     "handlebars": "^3.0.3",
-    "rethinkdb": "^2.0.2"
+    "lodash": "^3.10.1",
+    "rethinkdb": "^1.16.0"
   },
   "devDependencies": {
     "browserify": "^10.2.6",

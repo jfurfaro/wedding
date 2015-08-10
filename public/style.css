@@ -25,24 +25,34 @@
 .row:after {
   clear: both;
 }
+.img-wrap img {
+  max-width: 100%;
+}
 body {
   font: 400 100% 'freight-display-pro', 'Georgia', 'Times New Roman', serif;
   color: #3c3c3c;
   -webkit-font-smoothing: antialiased;
 }
 h1 {
-  font: 700 3.75em 'bistro-script-web', Helvetica, Arial, sans-serif;
-  /* 60/16 */
+  font: 700 6em 'bistro-script-web', sans-serif;
+  /* 96/16 */
   text-transform: lowercase;
   text-align: center;
   line-height: 1em;
   color: #ffffff;
 }
 h2 {
-  font: 1.75em 'freight-display-pro', 'Georgia', 'Times New Roman', serif;
-  /* 28/16 */
+  font: 700 4em 'franklin-gothic-ext-comp-urw', Helvetica, Arial, sans-serif;
+  /* 48/16 */
   line-height: 1.2em;
   color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
+}
+h3 {
+  font: 3em 'bistro-script-web', sans-serif;
+  /* 48/16 */
+  text-transform: lowercase;
 }
 p {
   font-size: 1.375em;
@@ -111,13 +121,13 @@ button {
 #hero {
   box-sizing: border-box;
   padding: 2em 0;
-  height: 90vh;
+  height: 93vh;
   background: url('/images/hero-bg.jpg') #ffe24c center top no-repeat;
   background-size: cover;
 }
 header {
   box-sizing: border-box;
-  height: 10vh;
+  height: 7vh;
   background: #ffe24c;
   transition: height 300ms, box-shadow 300ms;
 }
@@ -143,6 +153,11 @@ header nav ul li {
   padding-right: 1em;
   box-sizing: border-box;
   text-align: center;
+  color: #ffffff;
+  font: 2em 'franklin-gothic-ext-comp-urw', Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  line-height: 7vh;
+  transition: line-height 300ms;
 }
 @media (min-width: 600px) {
   header nav ul li {
@@ -153,43 +168,42 @@ header nav ul li {
 header nav ul li a {
   text-decoration: none;
   color: #ffffff;
-  font: 2em 'bistro-script-web', Helvetica, Arial, sans-serif;
-  line-height: 10vh;
-  transition: line-height 300ms;
 }
 header.stuck {
   position: fixed;
   width: 100%;
-  height: 7vh;
   top: 0;
   left: 0;
   box-shadow: 0 -3px 8px 2px #666666;
+  z-index: 99999;
 }
-header.stuck a {
-  line-height: 7vh;
-}
-#details .map {
+#details #leo-carrillo {
   min-height: 1px;
   padding-left: 1em;
   padding-right: 1em;
   box-sizing: border-box;
-  height: 300px;
 }
 @media (min-width: 600px) {
-  #details .map {
+  #details #leo-carrillo {
     float: left;
     width: 50%;
   }
 }
-#details address {
+#details #venue-description {
   min-height: 1px;
   padding-left: 1em;
   padding-right: 1em;
   box-sizing: border-box;
 }
 @media (min-width: 600px) {
-  #details address {
+  #details #venue-description {
     float: left;
-    width: 33.33333333%;
+    width: 50%;
   }
+}
+#details #venue-description p {
+  margin-top: 0;
+}
+footer {
+  padding-bottom: 2em;
 }
