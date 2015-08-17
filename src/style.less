@@ -83,9 +83,39 @@
 	.make-row();
 }
 
-.img-wrap {
+figure {
+	margin: 0;
+
 	img {
 		max-width: 100%;
+	}
+}
+
+.styled-link() {
+	position: relative;
+	text-decoration: none;
+	color: @text-color;
+	font-weight: 700;
+
+	&:before {
+		content: '';
+		position: absolute;
+		display: block;
+		background-color: fade(@gold, 50%);
+		left: 0;
+		right: 0;
+		bottom: .1em;
+		height: 0.363636363636em; /* 8/22 */
+		z-index: -1;
+		transition: height 300ms, background-color 300ms, bottom 300ms;
+	}
+
+	&:hover {
+		&:before {
+			height: 0.181818181818em; /* 4/22 */
+			background-color: @gold;
+			bottom: 0;
+		}
 	}
 }
 
@@ -127,7 +157,18 @@ h3 {
 p {
 	font-size: 1.375em; /* 22/16 */
 	line-height: 1.7em;
+
+	a {
+		.styled-link();
+	}
 }
+
+address {
+	a {
+		.styled-link();
+	}
+}
+
 
 // END PAGE TYPOGRAPHY
 // --------------------------------------------------
@@ -283,6 +324,86 @@ header {
 
 // END DETAILS
 // --------------------------------------------------
+
+
+// --------------------------------------------------
+// WEDDING PARTY
+
+#wedding-party {
+
+}
+
+#bio {
+	padding: 2em;
+	transition: height 500ms;
+	background: @gold;
+
+	h4,
+	h5,
+	p {
+		margin: 0;
+	}
+}
+
+#bridesmaids,
+#groomsmen {
+	.make-row(0);
+
+	.bridesmaid,
+	.groomsman {
+		.make-column(2, 12, @mobile, 0);
+		cursor: pointer;
+
+		figure {
+			position: relative;
+		}
+
+		div {
+			display: none;
+		}
+
+		&.selected {
+			figure {
+				&:before {
+					content: '';
+					position: absolute;
+					display: block;
+					border: 15px solid transparent;
+					left: 50%;
+					margin-left: -15px;
+				}
+			}
+		}
+	}
+
+	.bridesmaid {
+		&.selected {
+			figure {
+				&:before {
+					bottom: 0;
+					border-bottom-color: @gold;
+				}
+			}
+		}
+	}
+
+	.groomsman {
+		&.selected {
+			figure {
+				&:before {
+					top: 0;
+					border-top-color: @gold;
+				}
+			}
+		}
+	}
+}
+
+
+
+// END WEDDING PARTY
+// --------------------------------------------------
+
 
 // --------------------------------------------------
 // FOOTER

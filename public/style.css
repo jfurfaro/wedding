@@ -25,7 +25,10 @@
 .row:after {
   clear: both;
 }
-.img-wrap img {
+figure {
+  margin: 0;
+}
+figure img {
   max-width: 100%;
 }
 body {
@@ -58,6 +61,56 @@ p {
   font-size: 1.375em;
   /* 22/16 */
   line-height: 1.7em;
+}
+p a {
+  position: relative;
+  text-decoration: none;
+  color: #3c3c3c;
+  font-weight: 700;
+}
+p a:before {
+  content: '';
+  position: absolute;
+  display: block;
+  background-color: rgba(255, 226, 76, 0.5);
+  left: 0;
+  right: 0;
+  bottom: .1em;
+  height: 0.363636363636em;
+  /* 8/22 */
+  z-index: -1;
+  transition: height 300ms, background-color 300ms, bottom 300ms;
+}
+p a:hover:before {
+  height: 0.181818181818em;
+  /* 4/22 */
+  background-color: #ffe24c;
+  bottom: 0;
+}
+address a {
+  position: relative;
+  text-decoration: none;
+  color: #3c3c3c;
+  font-weight: 700;
+}
+address a:before {
+  content: '';
+  position: absolute;
+  display: block;
+  background-color: rgba(255, 226, 76, 0.5);
+  left: 0;
+  right: 0;
+  bottom: .1em;
+  height: 0.363636363636em;
+  /* 8/22 */
+  z-index: -1;
+  transition: height 300ms, background-color 300ms, bottom 300ms;
+}
+address a:hover:before {
+  height: 0.181818181818em;
+  /* 4/22 */
+  background-color: #ffe24c;
+  bottom: 0;
 }
 input[type='text'],
 input[type='tel'],
@@ -203,6 +256,85 @@ header.stuck {
 }
 #details #venue-description p {
   margin-top: 0;
+}
+#bio {
+  padding: 2em;
+  transition: height 500ms;
+  background: #ffe24c;
+}
+#bio h4,
+#bio h5,
+#bio p {
+  margin: 0;
+}
+#bridesmaids,
+#groomsmen {
+  margin-left: 0;
+  margin-right: 0;
+}
+#bridesmaids:before,
+#groomsmen:before,
+#bridesmaids:after,
+#groomsmen:after {
+  content: " ";
+  display: table;
+  line-height: 0;
+}
+#bridesmaids:after,
+#groomsmen:after {
+  clear: both;
+}
+#bridesmaids .bridesmaid,
+#groomsmen .bridesmaid,
+#bridesmaids .groomsman,
+#groomsmen .groomsman {
+  min-height: 1px;
+  padding-left: 0;
+  padding-right: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+@media (min-width: 600px) {
+  #bridesmaids .bridesmaid,
+  #groomsmen .bridesmaid,
+  #bridesmaids .groomsman,
+  #groomsmen .groomsman {
+    float: left;
+    width: 16.66666667%;
+  }
+}
+#bridesmaids .bridesmaid figure,
+#groomsmen .bridesmaid figure,
+#bridesmaids .groomsman figure,
+#groomsmen .groomsman figure {
+  position: relative;
+}
+#bridesmaids .bridesmaid div,
+#groomsmen .bridesmaid div,
+#bridesmaids .groomsman div,
+#groomsmen .groomsman div {
+  display: none;
+}
+#bridesmaids .bridesmaid.selected figure:before,
+#groomsmen .bridesmaid.selected figure:before,
+#bridesmaids .groomsman.selected figure:before,
+#groomsmen .groomsman.selected figure:before {
+  content: '';
+  position: absolute;
+  display: block;
+  border: 15px solid transparent;
+  left: 50%;
+  margin-left: -15px;
+}
+#bridesmaids .bridesmaid.selected figure:before,
+#groomsmen .bridesmaid.selected figure:before {
+  bottom: 0;
+  border-bottom-color: #ffe24c;
+}
+#bridesmaids .groomsman.selected figure:before,
+#groomsmen .groomsman.selected figure:before {
+  top: 0;
+  border-top-color: #ffe24c;
 }
 footer {
   padding-bottom: 2em;

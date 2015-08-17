@@ -12,6 +12,9 @@ app.set('views', path.resolve(__dirname + '/src'));
 app.set('view engine', 'hbs');
 app.engine('hbs', cons.handlebars);
 
+// Shortcircuit static assets
+app.use(express.static(__dirname + '/public'));
+
 app.use(bodyparser.urlencoded({extended: true}));
 app.use(bodyparser.json());
 

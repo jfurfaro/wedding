@@ -26,6 +26,37 @@ $(function(){
 	});
 
 	// --------------------------------------------------
+	// WEDDING PARTY
+	
+	var $bioContainer = $('#bio'),
+		$bioFader = $bioContainer.children('div');
+
+	$('.groomsman, .bridesmaid').click(function(){
+		var $this = $(this),
+			$bio = $this.children('div');
+
+		if($this.hasClass('selected')) {
+			$this.removeClass('selected');
+			$bioContainer.children('div').fadeTo(400, 0, function(){
+				$bioFader.html('');
+				$bioContainer.height(0);
+				$bioFader.fadeTo(400, 1);	
+			});
+		} else {
+			$('#wedding-party .selected').removeClass('selected');
+			$this.addClass('selected');
+			$bioFader.fadeTo(400, 0, function(){
+				$bioFader.html($bio.html());
+				$bioContainer.height($bioFader.outerHeight(true));
+				$bioFader.fadeTo(400, 1);	
+			});
+		}
+	});
+	
+	// END WEDDING PARTY
+	// --------------------------------------------------
+
+	// --------------------------------------------------
 	// MAPS
 	
 	// var leoCarrilloMap = new google.maps.Map($('#details .map')[0], {zoom: 12, center: {lat: 33.126940, lng: -117.261104}}),
