@@ -391,6 +391,10 @@ header {
 	figure {
 		.make-column(4);
 
+		@media (max-width: @mobile) {
+			margin-bottom: 2em;
+		}
+
 		img {
 			display: block;
 		}
@@ -418,6 +422,10 @@ header {
 
 	#bus-pitch {
 		.make-column(8);
+
+		@media (max-width: @mobile) {
+			margin-bottom: 2em;
+		}
 
 		p {
 			margin: 0;
@@ -672,10 +680,7 @@ footer {
 	p {
 		font: 700 0.75em @headline; /* 12/16 */
 		text-transform: uppercase;
-
-		@media (min-width: @mobile) {
-			text-align: center;
-		}
+		text-align: center;
 	}
 }
 

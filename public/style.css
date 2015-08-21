@@ -336,6 +336,11 @@ header.stuck {
     width: 33.33333333%;
   }
 }
+@media (max-width: 600px) {
+  #hotels figure {
+    margin-bottom: 2em;
+  }
+}
 #hotels figure img {
   display: block;
 }
@@ -375,6 +380,11 @@ header.stuck {
   #bus #bus-pitch {
     float: left;
     width: 66.66666667%;
+  }
+}
+@media (max-width: 600px) {
+  #bus #bus-pitch {
+    margin-bottom: 2em;
   }
 }
 #bus #bus-pitch p {
@@ -647,9 +657,5 @@ footer p {
   font: 700 0.75em 'franklin-gothic-ext-comp-urw', Helvetica, Arial, sans-serif;
   /* 12/16 */
   text-transform: uppercase;
-}
-@media (min-width: 600px) {
-  footer p {
-    text-align: center;
-  }
+  text-align: center;
 }

@@ -37,12 +37,14 @@ $(function(){
 	// PARALLAX HERO
 	
 	// Doing this half in vanilla JS and no one can stop me #sorrynotsorry
-	var hero = $('#hero')[0],
-		heroBGPosition = 0;
-	$(window).scroll(function(){
-		heroBGPosition = Math.floor(0.25 * window.scrollY);
-		hero.style.backgroundPosition = 'center '+ heroBGPosition + 'px';
-	});
+	if(!isMobile) {
+		var hero = $('#hero')[0],
+			heroBGPosition = 0;
+		$(window).scroll(function(){
+			heroBGPosition = Math.floor(0.25 * window.scrollY);
+			hero.style.backgroundPosition = 'center '+ heroBGPosition + 'px';
+		});
+	}
 	
 	// END PARALLAX HERO
 	// --------------------------------------------------
