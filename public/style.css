@@ -313,7 +313,7 @@ header.stuck {
 #hotels {
   margin-left: -1em;
   margin-right: -1em;
-  margin-bottom: 2em;
+  margin-bottom: 3em;
 }
 #hotels:before,
 #hotels:after {
@@ -376,6 +376,9 @@ header.stuck {
     float: left;
     width: 66.66666667%;
   }
+}
+#bus #bus-pitch p {
+  margin: 0;
 }
 form#bus-signup {
   min-height: 1px;

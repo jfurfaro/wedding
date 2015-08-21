@@ -6,18 +6,27 @@ require('waypoints/lib/jquery.waypoints.min.js');
 require('waypoints/lib/shortcuts/sticky.min.js');
 
 $(function(){
+	var isMobile = $(window).width() < 600;
 
 	// --------------------------------------------------
 	// HEADER STUFF
 	
-	var stickyHeader = new Waypoint.Sticky({
-		element: $('header')[0]
-	});
+	if(!isMobile) {
+		var stickyHeader = new Waypoint.Sticky({
+			element: $('header')[0]
+		});
+	}
 
 	$('header nav').on('click', 'a', function(e){
 		e.preventDefault();
 
-		$('html, body').animate({scrollTop: $($(this).attr('href')).offset().top - $('header').outerHeight(true)}, 700);
+		$('html, body').animate({scrollTop: $($(this).attr('href')).offset().top - $('header').outerHeight(true) - 10}, 700);
+	});
+
+	$('a[href="#bus"]').click(function(e){
+		e.preventDefault();
+
+		$('html, body').animate({scrollTop: $('#bus').prev('h4').offset().top - $('header').outerHeight(true) - 10}, 700);
 	});
 	
 	// END HEADER STUFF
@@ -91,7 +100,7 @@ $(function(){
 	var $bioContainer = $('#bio'),
 		$bioFader = $bioContainer.children('div');
 
-	if($(window).width() > 600) {
+	if(!isMobile) {
 		$('.groomsman, .bridesmaid').click(function(){
 			var $this = $(this),
 				$bio = $this.children('div');
@@ -125,7 +134,7 @@ $(function(){
 	// --------------------------------------------------
 	// HASHTAG
 	
-	if($(window).width() > 600) {
+	if(!isMobile) {
 		$('.instagram-link').click(function(){
 			return false;
 		});
