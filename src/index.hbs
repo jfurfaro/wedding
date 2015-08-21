@@ -54,7 +54,7 @@
 					Both the ceremony and the reception will be held outdoors, so we recommend wearing layers to be comfortable in the afternoon sun, and also once the sun goes down. The 27 acres of this historical park is made of irregular earthen and paved surfaces. It is recommended that you wear appropriate shoes for the uneven terrain.
 				</p>
 				<p>
-					The venue has a large parking lot, and there is ample space to park. It is a brief walk to the estate where the ceremony will be held, so please allow at least 5 minutes after parking to make your way to the ceremony. We encourage you to arrive early to explore the grounds and attempt to take a #peacockselfie.  There is no overnight parking allowed at the ranch, thus all cars must be moved by 11pm. Our reception will be over by 10pm. Look into taking provided transportation here.
+					The venue has a large parking lot, and there is ample space to park. It is a brief walk to the estate where the ceremony will be held, so please allow at least 5 minutes after parking to make your way to the ceremony. We encourage you to arrive early to explore the grounds and attempt to take a <span class="hashtag">#peacockselfie</span>.  There is no overnight parking allowed at the ranch, thus all cars must be moved by 11pm. Our reception will be over by 10pm. Look into taking provided transportation here.
 				</p>
 			</div>
 		</section>
@@ -65,32 +65,65 @@
 				<p>
 					The closest airport to the venue in Carlsbad is McCellan-Palomar (CLD) however, you will find a wider range of flights at the San Diego International Airport (SAN) located in downtown San Diego, about 40 miles south of Carlsbad. There are an unlimited number of places to stay, including hotels and affordable private rentals on websites like <a href="http://www.vrbo.com" target="_blank">VBRO</a> and <a href="http://www.airbnb.com" target="_blank">AirBnb</a>. Please do not hesitate to reach out to us for advice on where to stay! We have compiled a short list of places throughout the county that we recommend, but feel free to venture out on your own!
 				</p>
-
+				
+				<h4>Get Some Rest</h4>
 				<div id="hotels">
-					<div>
-						<div class="map"></div>
-						<h4>Carlsbad Beach Location</h4>
-					</div>
-					<div>
-						<div class="map"></div>
-						<h4>Carlsbad Venue Location</h4>
-					</div>
-					<div>
-						<div class="map"></div>
-						<h4>Horton Grand Hotel</h4>
-					</div>
+					<figure>
+						<img src="/images/carlsbad-inn.jpg" alt="Carlsbad Inn">
+						<figcaption>
+							<h5>Carlsbad Inn Beach Resort</h5>
+							<p>
+								Oceanfront in Carlsbad, about 10 miles from the venue<br>
+								<a href="https://www.google.com/maps/place/Carlsbad+Inn+Beach+Resort/@33.1573537,-117.351782,15z/data=!4m2!3m1!1s0x0:0xc0451fccddef82c" target="_blank">View in Google Maps</a>
+							</p>
+						</figcaption>
+					</figure>
+
+					<figure>
+						<img src="/images/hampton-inn.jpg" alt="Carlsbad Inn">
+						<figcaption>
+							<h5>Hampton Inn Carlsbad</h5>
+							<p>
+								Inland Carlsbad, about 3 miles from the venue<br>
+								<a href="https://www.google.com/maps/place/Hampton+Inn+Carlsbad-North+San+Diego+County/@33.125745,-117.27344,15z/data=!4m2!3m1!1s0x0:0x2e7a85798e9fd185" target="_blank">View in Google Maps</a>
+							</p>
+						</figcaption>
+					</figure>
+
+					<figure>
+						<img src="/images/horton-grand.jpg" alt="Carlsbad Inn">
+						<figcaption>
+							<h5>Historical Horton Grand</h5>
+							<p>
+								Downtown San Diego, about 40 miles south of the venue<br>
+								<a href="https://www.google.com/maps/place/Horton+Grand+Hotel/@32.7103056,-117.1615177,15z/data=!4m2!3m1!1s0x0:0x6c02a9d1d5181e03?sa=X&ved=0CLYBEPwSMApqFQoTCMyrjrKcuccCFUM1Pgod5YcMJg" target="_blank">View in Google Maps</a>
+							</p>
+						</figcaption>
+					</figure>
+					
 				</div>
 
-				<form action="/bus" method="POST">
-					<input type="text" name="passengers[]">
-					<input type="text" name="passengers[]">
-					<button type="submit">Submit</button>
-				</form>
+				<h4>Ride the Bus</h4>
+				<div id="bus">
+					<div id="bus-pitch">
+						<p>
+							Live in San Diego or staying downtown? Want to keep the party going after the reception? If you said yes to both of those, then we've got a bus for you! It will leave from downtown at 12:45pm to get everyone up to the venue on time for the ceremony, and after the reception will take everyone back downtown for more festivities. Exact location for pickup is TBD - sign up for the bus so we know what size to get!
+						</p>
+					</div>
+
+					<form id="bus-signup" action="/bus" method="POST">
+						<label>Enter Your Name</label>
+						<input type="text" name="passenger" placeholder="First & Last">	
+						<button type="submit">Submit</button>
+					</form>
+				</div>
 			</div>
 		</section>
 
 		<section id="wedding-party">
-			<h3>Meet the Wedding Party</h3>
+			<div class="container">
+				<h3>Meet the Wedding Party</h3>
+			</div>
 			<div id="bridesmaids">
 				<div class="bridesmaid">
 					<figure>
@@ -165,7 +198,7 @@
 					</div>
 				</div>
 			</div>
-			<div id="bio"><div></div></div>
+			<div id="bio" class="closed"><div></div></div>
 			<div id="groomsmen">
 				<div class="groomsman">
 					<figure>
@@ -228,7 +261,7 @@
 			<div class="container">
 				<h3>Registry</h3>
 				<p>
-					While gifts are unnecessary, we have assembled a registry per request of friends and family. We are not registered at any place in-particular, but do have a few items on a universal website located here: <a href="http://www.myregistry.com/public/kandjgethitched" target="_blank">http://www.myregistry.com/public/kandjgethitched</a>  
+					While gifts are unnecessary, we have assembled a registry per request of friends and family. We are not registered at any place in-particular, but do have a few items on a universal website located here: <a href="http://www.myregistry.com/public/kandjgethitched" target="_blank">Our Registry</a>  
 				</p>
 			</div>
 		</section>
@@ -237,15 +270,19 @@
 			<div class="container">
 				<h3>Add to Our Story</h3>
 				<p>
-					We politely ask that you refrain from cell phone use and taking photos during the actual ceremony (trust us, our photographer is really great and you'll all be able to download photos!), but we'd LOVE for you to take photos at the reception and share them using the <span class="hashtag">#katieandjoegethitched</span> hashtag across all social media!
+					We politely ask that you refrain from cell phone use and taking photos during the actual ceremony (trust us, our photographer is really great and you'll all be able to download photos!), but we'd LOVE for you to take photos at the reception and share them using the hashtag below!
 				</p>
+				<p id="big-ass-hashtag"><a class="instagram-link" href="instagram://tag?name=katieandjoegethitched" target="_blank">#katieandjoegethitched</a></p>
 			</div>
 		</section>
 	</main>
 
 	<footer>
 		<div class="container">
-			Copyright &copy;2015 Katie &amp; Joe
+			<figure>
+				<img src="/images/twirl.jpg" alt="Katie&Joe">
+			</figure>
+			<p>Copyright &copy;2015 Katie &amp; Joe</p>
 		</div>
 	</footer>
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDj75h_sYqSPakecIWRrYExTc2Bx4QIUVE&libraries=places"></script>

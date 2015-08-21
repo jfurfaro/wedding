@@ -5,7 +5,8 @@
 @body: 'freight-display-pro', 'Georgia', 'Times New Roman', serif;
 
 @gray: #e1e1e1;
-@gold: #ffe24c;
+// @chartreuse: #ffe24c;
+@chartreuse: #e5db40;
 @black: #000;
 @white: #fff;
 @text-color: #3c3c3c;
@@ -66,11 +67,11 @@
 // Getting fancy - Can't be combined because they get cancelled
 ::selection {
 	color: @white;
-	background: @gold;
+	background: @chartreuse;
 }
 ::-moz-selection {
 	color: @white;
-	background: @gold;
+	background: @chartreuse;
 }
 
 .container {
@@ -101,7 +102,7 @@ figure {
 		content: '';
 		position: absolute;
 		display: block;
-		background-color: fade(@gold, 50%);
+		background-color: fade(@chartreuse, 50%);
 		left: 0;
 		right: 0;
 		bottom: .1em;
@@ -113,7 +114,7 @@ figure {
 	&:hover {
 		&:before {
 			height: 0.181818181818em; /* 4/22 */
-			background-color: @gold;
+			background-color: @chartreuse;
 			bottom: 0;
 		}
 	}
@@ -139,6 +140,10 @@ h1 {
 	text-align: center;
 	line-height: 1em;
 	color: @white;
+
+	@media (max-width: @mobile) {
+		font-size: 2.75em;
+	}
 }
 
 h2 {
@@ -147,11 +152,22 @@ h2 {
 	color: @white;
 	text-align: center;
 	text-transform: uppercase;
+
+	@media (max-width: @mobile) {
+		font-size: 2em;
+	}
 }
 
 h3 {
 	font: 3em @script; /* 48/16 */
 	text-transform: lowercase;
+	line-height: 1em;
+	margin-bottom: .5em;
+
+	@media (max-width: @mobile) {
+		font-size: 1.5em;
+		border-bottom: 3px dotted @chartreuse;
+	}
 }
 
 p {
@@ -160,6 +176,10 @@ p {
 
 	a {
 		.styled-link();
+	}
+
+	@media (max-width: @mobile) {
+		font-size: 1.15em;
 	}
 }
 
@@ -176,29 +196,23 @@ address {
 // --------------------------------------------------
 // FORM STYLES
 
-input[type='text'],
-input[type='tel'],
-input[type='password'],
-input[type='email'],
-input[type='number'],
-select {
+input[type='text'] {
 	-webkit-appearance: none;
 	border-radius: 0;
 	box-sizing: border-box;	
 	box-shadow: none;
-	border: @gray;
+	display: block;
+	width: 100%;
+	margin-bottom: .5em;
+	border: 1px solid @gray;
 	background: @white;
 	color: @text-color;
 	font: 1.375em @body;  /* 22/16 */
-	margin-bottom: 5px;
+	padding: 0.318181818182em 0.454545454545em; /* 7/22 */ /* 10/22 */
 
 	&:focus {
 		outline: 0;
-		box-shadow: inset 0 0 0 2px @gold;
-	}
-
-	&.error {
-		box-shadow: inset 3px 0 0 0 @error;
+		box-shadow: inset 0 0 0 2px @chartreuse;
 	}
 }
 
@@ -214,28 +228,40 @@ select {
 }
 
 label {
-	font: 700 0.875em @body; /* 14/16 */
+	display: block;
+	margin-bottom: .5em;
+	font: 700 1em @headline; /* 14/16 */
+	text-transform: uppercase;
 }
-
-select {
-	-moz-appearance: none;
-	cursor: pointer;
-
-	&::-ms-expand {
-	    display: none;
-	}
-
-	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-		
-	}
-}
-
 
 button {
 	-webkit-appearance: none;
 	border: none;
-	background: blue;
-	color: white;
+	outline: 0;
+	background: @chartreuse;
+	color: @white;
+	font: 30px @headline;
+	text-transform: uppercase;
+	text-align: center;
+	width: 4em; /* 120/30 */
+	letter-spacing: 2px;
+	box-shadow: 0 0 4px -1px fade(@black, 50%);	
+	width: 100%;
+	transition: background-color 250ms, box-shadow 250ms;
+
+	&:hover {
+		background-color: lighten(@chartreuse, 10%);
+	}
+
+	&:active {
+		background-color: darken(@chartreuse, 10%);
+		box-shadow: 0 0 5px 0 fade(@black, 50%);
+	}
+
+	&:disabled {
+		background-color: @gray;
+		cursor: wait;
+	}
 }
 	
 // END FORM STYLES
@@ -249,8 +275,12 @@ button {
 	box-sizing: border-box;
 	padding: 2em 0;
 	height: 93vh;
-	background: url('/images/hero-bg.jpg') @gold center top no-repeat;
+	background: url('/images/hero-bg.jpg') @chartreuse center top no-repeat;
 	background-size: cover;
+
+	@media (max-width: @mobile) {
+		height: auto;
+	}
 }
 
 // END HERO
@@ -263,8 +293,12 @@ button {
 header {
 	box-sizing: border-box;
 	height: 7vh;
-	background: @gold;
+	background: @chartreuse;
 	transition: height 300ms, box-shadow 300ms;
+
+	@media (max-width: @mobile) {
+		display: none;
+	}
 
 	nav {
 		ul {
@@ -309,8 +343,21 @@ header {
 
 #details {
 
+	.hashtag {
+		font-family: @headline;
+		font-weight: 700;
+		text-transform: uppercase;
+		color: @chartreuse;
+	}
+
 	#leo-carrillo {
 		.make-column(6);
+
+		@media (max-width: @mobile) {
+			figure {
+				margin-bottom: 2em;
+			}
+		}	
 	}
 
 	#venue-description {
@@ -327,6 +374,72 @@ header {
 
 
 // --------------------------------------------------
+// TRAVEL
+
+#travel {
+	h4 {
+		font: 700 36px @headline;
+		text-transform: uppercase;
+		margin: 0 auto .5em;
+	}
+}
+
+#hotels {
+	.make-row();
+	margin-bottom: 2em;
+
+	figure {
+		.make-column(4);
+
+		img {
+			display: block;
+		}
+	}
+
+	figcaption {
+		h5,
+		p {
+			text-align: center;
+			margin: 0;
+		}
+
+		h5 {
+			font-size: 1.25em; /* 20/16 */
+		}
+
+		p {
+			font-size: 0.875em; /* 14/16 */
+		}
+	}
+}
+
+#bus {
+	.make-row();
+
+	#bus-pitch {
+		.make-column(8);
+	}
+}
+
+form#bus-signup {
+	.make-column(4);
+
+	p {
+		margin: 0;
+		font-size: 0.875em; /* 14/16 */
+		color: green;
+	}
+
+	.error {
+		color: red;
+	}
+}
+
+// END TRAVEL
+// --------------------------------------------------
+
+
+// --------------------------------------------------
 // WEDDING PARTY
 
 #wedding-party {
@@ -335,13 +448,41 @@ header {
 
 #bio {
 	padding: 2em;
-	transition: height 500ms;
-	background: @gold;
+	transition: height 500ms, padding 500ms;
+	background: @chartreuse;
 
 	h4,
 	h5,
 	p {
+		position: relative;
 		margin: 0;
+		padding: 0;
+	}
+
+	h4 {
+		font: 48px @script;
+		color: @white;
+		line-height: 1em;
+		margin-bottom: -3px;
+		z-index: 100;
+	}
+
+	h5 {
+		font: 700 18px @headline;
+		text-transform: uppercase;
+		line-height: 1em;
+		margin-bottom: 1em;
+		text-indent: 1em;
+		z-index: 99;
+	}
+
+	p {
+		padding: 0 18px; 
+	}
+
+	&.closed {
+		padding-top: 0;
+		padding-bottom: 0;
 	}
 }
 
@@ -351,37 +492,110 @@ header {
 
 	.bridesmaid,
 	.groomsman {
+		position: relative;
 		.make-column(2, 12, @mobile, 0);
 		cursor: pointer;
 
 		figure {
 			position: relative;
+
+			&:before {
+				content: '';
+				position: absolute;
+				display: block;
+				border: 15px solid transparent;
+				left: 50%;
+				margin-left: -15px;
+				transition: opacity 300ms;
+				opacity: 0;
+				z-index: 9999;
+			}
 		}
 
 		div {
-			display: none;
-		}
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			padding: 1em;
+			background: fade(@black, 70%);
+			opacity: 0;
+			transition: opacity 300ms;
+			z-index: 999;
 
-		&.selected {
-			figure {
-				&:before {
-					content: '';
-					position: absolute;
-					display: block;
-					border: 15px solid transparent;
-					left: 50%;
-					margin-left: -15px;
+			@media (min-width: @mobile) {
+				top: 70%;
+			}
+
+			h4,
+			h5,
+			p {
+				margin: 0;
+				color: @white;
+			}
+
+			h4 {
+				font: 18px @script;
+				margin-bottom: -3px;
+
+				@media (max-width: @mobile) {
+					font-size: 24px;
+				}
+			}
+
+			h5 {
+				font: 700 14px @headline;
+				text-transform: uppercase;
+				line-height: 1em;
+
+				@media (max-width: @mobile) {
+					margin-bottom: .5em;
+				}	
+			}
+
+			p {
+				font-size: 0.75em; /* 12/16 */
+				line-height: 1.4;
+
+				@media (min-width: @mobile) {
+					display: none;					
 				}
 			}
 		}
+
+		@media (min-width: @mobile) {
+			&:hover {
+				div {
+					opacity: 1;
+				}
+			}
+
+			&.selected {
+				figure {
+					&:before {
+						opacity: 1;
+					}
+				}
+			}
+		}
+
+		@media (max-width: @mobile) {
+			&.selected {
+				div {
+					opacity: 1;
+				}
+			}
+		}
+			
 	}
 
 	.bridesmaid {
 		&.selected {
 			figure {
 				&:before {
-					bottom: 0;
-					border-bottom-color: @gold;
+					bottom: -1px;
+					border-bottom-color: @chartreuse;
 				}
 			}
 		}
@@ -392,7 +606,7 @@ header {
 			figure {
 				&:before {
 					top: 0;
-					border-top-color: @gold;
+					border-top-color: @chartreuse;
 				}
 			}
 		}
@@ -406,10 +620,59 @@ header {
 
 
 // --------------------------------------------------
+// ADD TO OUR STORY
+
+#big-ass-hashtag {
+	margin: 0;
+	line-height: 1em;
+	font: 700 40px @headline;
+	text-transform: uppercase;
+
+	a {
+		color: @chartreuse;
+
+		@media (min-width: @mobile) {
+			cursor: default;
+		}
+
+		&:before {
+			display: none;
+		}
+	}
+
+	@media (min-width: @mobile) {
+		font-size: 6em; /* 96/16 */
+		text-align: center;
+	}
+}
+
+// END ADD TO OUR STORY
+// --------------------------------------------------
+
+
+// --------------------------------------------------
 // FOOTER
 
 footer {
-	padding-bottom: 2em;
+	padding: 4em 0 2em;
+
+	figure {
+		text-align: center;
+
+		img {
+			max-width: 240px;
+			border-radius: 50%;
+		}
+	}
+
+	p {
+		font: 700 0.75em @headline; /* 12/16 */
+		text-transform: uppercase;
+
+		@media (min-width: @mobile) {
+			text-align: center;
+		}
+	}
 }
 
 // END FOOTER

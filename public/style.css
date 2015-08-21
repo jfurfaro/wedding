@@ -1,10 +1,10 @@
 ::selection {
   color: #ffffff;
-  background: #ffe24c;
+  background: #e5db40;
 }
 ::-moz-selection {
   color: #ffffff;
-  background: #ffe24c;
+  background: #e5db40;
 }
 .container {
   max-width: 66.875em;
@@ -44,6 +44,11 @@ h1 {
   line-height: 1em;
   color: #ffffff;
 }
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.75em;
+  }
+}
 h2 {
   font: 700 4em 'franklin-gothic-ext-comp-urw', Helvetica, Arial, sans-serif;
   /* 48/16 */
@@ -52,10 +57,23 @@ h2 {
   text-align: center;
   text-transform: uppercase;
 }
+@media (max-width: 600px) {
+  h2 {
+    font-size: 2em;
+  }
+}
 h3 {
   font: 3em 'bistro-script-web', sans-serif;
   /* 48/16 */
   text-transform: lowercase;
+  line-height: 1em;
+  margin-bottom: .5em;
+}
+@media (max-width: 600px) {
+  h3 {
+    font-size: 1.5em;
+    border-bottom: 3px dotted #e5db40;
+  }
 }
 p {
   font-size: 1.375em;
@@ -72,7 +90,7 @@ p a:before {
   content: '';
   position: absolute;
   display: block;
-  background-color: rgba(255, 226, 76, 0.5);
+  background-color: rgba(229, 219, 64, 0.5);
   left: 0;
   right: 0;
   bottom: .1em;
@@ -84,8 +102,13 @@ p a:before {
 p a:hover:before {
   height: 0.181818181818em;
   /* 4/22 */
-  background-color: #ffe24c;
+  background-color: #e5db40;
   bottom: 0;
+}
+@media (max-width: 600px) {
+  p {
+    font-size: 1.15em;
+  }
 }
 address a {
   position: relative;
@@ -97,7 +120,7 @@ address a:before {
   content: '';
   position: absolute;
   display: block;
-  background-color: rgba(255, 226, 76, 0.5);
+  background-color: rgba(229, 219, 64, 0.5);
   left: 0;
   right: 0;
   bottom: .1em;
@@ -109,42 +132,29 @@ address a:before {
 address a:hover:before {
   height: 0.181818181818em;
   /* 4/22 */
-  background-color: #ffe24c;
+  background-color: #e5db40;
   bottom: 0;
 }
-input[type='text'],
-input[type='tel'],
-input[type='password'],
-input[type='email'],
-input[type='number'],
-select {
+input[type='text'] {
   -webkit-appearance: none;
   border-radius: 0;
   box-sizing: border-box;
   box-shadow: none;
-  border: #e1e1e1;
+  display: block;
+  width: 100%;
+  margin-bottom: .5em;
+  border: 1px solid #e1e1e1;
   background: #ffffff;
   color: #3c3c3c;
   font: 1.375em 'freight-display-pro', 'Georgia', 'Times New Roman', serif;
   /* 22/16 */
-  margin-bottom: 5px;
+  padding: 0.318181818182em 0.454545454545em;
+  /* 7/22 */
+  /* 10/22 */
 }
-input[type='text']:focus,
-input[type='tel']:focus,
-input[type='password']:focus,
-input[type='email']:focus,
-input[type='number']:focus,
-select:focus {
+input[type='text']:focus {
   outline: 0;
-  box-shadow: inset 0 0 0 2px #ffe24c;
-}
-input[type='text'].error,
-input[type='tel'].error,
-input[type='password'].error,
-input[type='email'].error,
-input[type='number'].error,
-select.error {
-  box-shadow: inset 3px 0 0 0 #ff0000;
+  box-shadow: inset 0 0 0 2px #e5db40;
 }
 ::-ms-clear {
   width: 0;
@@ -155,34 +165,61 @@ select.error {
   height: 0;
 }
 label {
-  font: 700 0.875em 'freight-display-pro', 'Georgia', 'Times New Roman', serif;
+  display: block;
+  margin-bottom: .5em;
+  font: 700 1em 'franklin-gothic-ext-comp-urw', Helvetica, Arial, sans-serif;
   /* 14/16 */
-}
-select {
-  -moz-appearance: none;
-  cursor: pointer;
-}
-select::-ms-expand {
-  display: none;
+  text-transform: uppercase;
 }
 button {
   -webkit-appearance: none;
   border: none;
-  background: blue;
-  color: white;
+  outline: 0;
+  background: #e5db40;
+  color: #ffffff;
+  font: 30px 'franklin-gothic-ext-comp-urw', Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  width: 4em;
+  /* 120/30 */
+  letter-spacing: 2px;
+  box-shadow: 0 0 4px -1px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  transition: background-color 250ms, box-shadow 250ms;
+}
+button:hover {
+  background-color: #ebe36d;
+}
+button:active {
+  background-color: #d5ca1d;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+}
+button:disabled {
+  background-color: #e1e1e1;
+  cursor: wait;
 }
 #hero {
   box-sizing: border-box;
   padding: 2em 0;
   height: 93vh;
-  background: url('/images/hero-bg.jpg') #ffe24c center top no-repeat;
+  background: url('/images/hero-bg.jpg') #e5db40 center top no-repeat;
   background-size: cover;
+}
+@media (max-width: 600px) {
+  #hero {
+    height: auto;
+  }
 }
 header {
   box-sizing: border-box;
   height: 7vh;
-  background: #ffe24c;
+  background: #e5db40;
   transition: height 300ms, box-shadow 300ms;
+}
+@media (max-width: 600px) {
+  header {
+    display: none;
+  }
 }
 header nav ul {
   margin: 0;
@@ -230,6 +267,12 @@ header.stuck {
   box-shadow: 0 -3px 8px 2px #666666;
   z-index: 99999;
 }
+#details .hashtag {
+  font-family: 'franklin-gothic-ext-comp-urw', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #e5db40;
+}
 #details #leo-carrillo {
   min-height: 1px;
   padding-left: 1em;
@@ -240,6 +283,11 @@ header.stuck {
   #details #leo-carrillo {
     float: left;
     width: 50%;
+  }
+}
+@media (max-width: 600px) {
+  #details #leo-carrillo figure {
+    margin-bottom: 2em;
   }
 }
 #details #venue-description {
@@ -257,15 +305,132 @@ header.stuck {
 #details #venue-description p {
   margin-top: 0;
 }
+#travel h4 {
+  font: 700 36px 'franklin-gothic-ext-comp-urw', Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  margin: 0 auto .5em;
+}
+#hotels {
+  margin-left: -1em;
+  margin-right: -1em;
+  margin-bottom: 2em;
+}
+#hotels:before,
+#hotels:after {
+  content: " ";
+  display: table;
+  line-height: 0;
+}
+#hotels:after {
+  clear: both;
+}
+#hotels figure {
+  min-height: 1px;
+  padding-left: 1em;
+  padding-right: 1em;
+  box-sizing: border-box;
+}
+@media (min-width: 600px) {
+  #hotels figure {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+#hotels figure img {
+  display: block;
+}
+#hotels figcaption h5,
+#hotels figcaption p {
+  text-align: center;
+  margin: 0;
+}
+#hotels figcaption h5 {
+  font-size: 1.25em;
+  /* 20/16 */
+}
+#hotels figcaption p {
+  font-size: 0.875em;
+  /* 14/16 */
+}
+#bus {
+  margin-left: -1em;
+  margin-right: -1em;
+}
+#bus:before,
+#bus:after {
+  content: " ";
+  display: table;
+  line-height: 0;
+}
+#bus:after {
+  clear: both;
+}
+#bus #bus-pitch {
+  min-height: 1px;
+  padding-left: 1em;
+  padding-right: 1em;
+  box-sizing: border-box;
+}
+@media (min-width: 600px) {
+  #bus #bus-pitch {
+    float: left;
+    width: 66.66666667%;
+  }
+}
+form#bus-signup {
+  min-height: 1px;
+  padding-left: 1em;
+  padding-right: 1em;
+  box-sizing: border-box;
+}
+@media (min-width: 600px) {
+  form#bus-signup {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+form#bus-signup p {
+  margin: 0;
+  font-size: 0.875em;
+  /* 14/16 */
+  color: green;
+}
+form#bus-signup .error {
+  color: red;
+}
 #bio {
   padding: 2em;
-  transition: height 500ms;
-  background: #ffe24c;
+  transition: height 500ms, padding 500ms;
+  background: #e5db40;
 }
 #bio h4,
 #bio h5,
 #bio p {
+  position: relative;
   margin: 0;
+  padding: 0;
+}
+#bio h4 {
+  font: 48px 'bistro-script-web', sans-serif;
+  color: #ffffff;
+  line-height: 1em;
+  margin-bottom: -3px;
+  z-index: 100;
+}
+#bio h5 {
+  font: 700 18px 'franklin-gothic-ext-comp-urw', Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  line-height: 1em;
+  margin-bottom: 1em;
+  text-indent: 1em;
+  z-index: 99;
+}
+#bio p {
+  padding: 0 18px;
+}
+#bio.closed {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 #bridesmaids,
 #groomsmen {
@@ -288,6 +453,7 @@ header.stuck {
 #groomsmen .bridesmaid,
 #bridesmaids .groomsman,
 #groomsmen .groomsman {
+  position: relative;
   min-height: 1px;
   padding-left: 0;
   padding-right: 0;
@@ -309,33 +475,178 @@ header.stuck {
 #groomsmen .groomsman figure {
   position: relative;
 }
-#bridesmaids .bridesmaid div,
-#groomsmen .bridesmaid div,
-#bridesmaids .groomsman div,
-#groomsmen .groomsman div {
-  display: none;
-}
-#bridesmaids .bridesmaid.selected figure:before,
-#groomsmen .bridesmaid.selected figure:before,
-#bridesmaids .groomsman.selected figure:before,
-#groomsmen .groomsman.selected figure:before {
+#bridesmaids .bridesmaid figure:before,
+#groomsmen .bridesmaid figure:before,
+#bridesmaids .groomsman figure:before,
+#groomsmen .groomsman figure:before {
   content: '';
   position: absolute;
   display: block;
   border: 15px solid transparent;
   left: 50%;
   margin-left: -15px;
+  transition: opacity 300ms;
+  opacity: 0;
+  z-index: 9999;
+}
+#bridesmaids .bridesmaid div,
+#groomsmen .bridesmaid div,
+#bridesmaids .groomsman div,
+#groomsmen .groomsman div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1em;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 300ms;
+  z-index: 999;
+}
+@media (min-width: 600px) {
+  #bridesmaids .bridesmaid div,
+  #groomsmen .bridesmaid div,
+  #bridesmaids .groomsman div,
+  #groomsmen .groomsman div {
+    top: 70%;
+  }
+}
+#bridesmaids .bridesmaid div h4,
+#groomsmen .bridesmaid div h4,
+#bridesmaids .groomsman div h4,
+#groomsmen .groomsman div h4,
+#bridesmaids .bridesmaid div h5,
+#groomsmen .bridesmaid div h5,
+#bridesmaids .groomsman div h5,
+#groomsmen .groomsman div h5,
+#bridesmaids .bridesmaid div p,
+#groomsmen .bridesmaid div p,
+#bridesmaids .groomsman div p,
+#groomsmen .groomsman div p {
+  margin: 0;
+  color: #ffffff;
+}
+#bridesmaids .bridesmaid div h4,
+#groomsmen .bridesmaid div h4,
+#bridesmaids .groomsman div h4,
+#groomsmen .groomsman div h4 {
+  font: 18px 'bistro-script-web', sans-serif;
+  margin-bottom: -3px;
+}
+@media (max-width: 600px) {
+  #bridesmaids .bridesmaid div h4,
+  #groomsmen .bridesmaid div h4,
+  #bridesmaids .groomsman div h4,
+  #groomsmen .groomsman div h4 {
+    font-size: 24px;
+  }
+}
+#bridesmaids .bridesmaid div h5,
+#groomsmen .bridesmaid div h5,
+#bridesmaids .groomsman div h5,
+#groomsmen .groomsman div h5 {
+  font: 700 14px 'franklin-gothic-ext-comp-urw', Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  line-height: 1em;
+}
+@media (max-width: 600px) {
+  #bridesmaids .bridesmaid div h5,
+  #groomsmen .bridesmaid div h5,
+  #bridesmaids .groomsman div h5,
+  #groomsmen .groomsman div h5 {
+    margin-bottom: .5em;
+  }
+}
+#bridesmaids .bridesmaid div p,
+#groomsmen .bridesmaid div p,
+#bridesmaids .groomsman div p,
+#groomsmen .groomsman div p {
+  font-size: 0.75em;
+  /* 12/16 */
+  line-height: 1.4;
+}
+@media (min-width: 600px) {
+  #bridesmaids .bridesmaid div p,
+  #groomsmen .bridesmaid div p,
+  #bridesmaids .groomsman div p,
+  #groomsmen .groomsman div p {
+    display: none;
+  }
+}
+@media (min-width: 600px) {
+  #bridesmaids .bridesmaid:hover div,
+  #groomsmen .bridesmaid:hover div,
+  #bridesmaids .groomsman:hover div,
+  #groomsmen .groomsman:hover div {
+    opacity: 1;
+  }
+  #bridesmaids .bridesmaid.selected figure:before,
+  #groomsmen .bridesmaid.selected figure:before,
+  #bridesmaids .groomsman.selected figure:before,
+  #groomsmen .groomsman.selected figure:before {
+    opacity: 1;
+  }
+}
+@media (max-width: 600px) {
+  #bridesmaids .bridesmaid.selected div,
+  #groomsmen .bridesmaid.selected div,
+  #bridesmaids .groomsman.selected div,
+  #groomsmen .groomsman.selected div {
+    opacity: 1;
+  }
 }
 #bridesmaids .bridesmaid.selected figure:before,
 #groomsmen .bridesmaid.selected figure:before {
-  bottom: 0;
-  border-bottom-color: #ffe24c;
+  bottom: -1px;
+  border-bottom-color: #e5db40;
 }
 #bridesmaids .groomsman.selected figure:before,
 #groomsmen .groomsman.selected figure:before {
   top: 0;
-  border-top-color: #ffe24c;
+  border-top-color: #e5db40;
+}
+#big-ass-hashtag {
+  margin: 0;
+  line-height: 1em;
+  font: 700 40px 'franklin-gothic-ext-comp-urw', Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+}
+#big-ass-hashtag a {
+  color: #e5db40;
+}
+@media (min-width: 600px) {
+  #big-ass-hashtag a {
+    cursor: default;
+  }
+}
+#big-ass-hashtag a:before {
+  display: none;
+}
+@media (min-width: 600px) {
+  #big-ass-hashtag {
+    font-size: 6em;
+    /* 96/16 */
+    text-align: center;
+  }
 }
 footer {
-  padding-bottom: 2em;
+  padding: 4em 0 2em;
+}
+footer figure {
+  text-align: center;
+}
+footer figure img {
+  max-width: 240px;
+  border-radius: 50%;
+}
+footer p {
+  font: 700 0.75em 'franklin-gothic-ext-comp-urw', Helvetica, Arial, sans-serif;
+  /* 12/16 */
+  text-transform: uppercase;
+}
+@media (min-width: 600px) {
+  footer p {
+    text-align: center;
+  }
 }
