@@ -1,3 +1,5 @@
+/* 600/16 */
+/* 800/16 */
 ::selection {
   color: #ffffff;
   background: #e5db40;
@@ -44,7 +46,7 @@ h1 {
   line-height: 1em;
   color: #ffffff;
 }
-@media (max-width: 600px) {
+@media (max-width: 37.5em) {
   h1 {
     font-size: 2.75em;
   }
@@ -57,7 +59,7 @@ h2 {
   text-align: center;
   text-transform: uppercase;
 }
-@media (max-width: 600px) {
+@media (max-width: 37.5em) {
   h2 {
     font-size: 2em;
   }
@@ -69,7 +71,7 @@ h3 {
   line-height: 1em;
   margin-bottom: .5em;
 }
-@media (max-width: 600px) {
+@media (max-width: 37.5em) {
   h3 {
     font-size: 1.5em;
     border-bottom: 3px dotted #e5db40;
@@ -105,7 +107,7 @@ p a:hover:before {
   background-color: #e5db40;
   bottom: 0;
 }
-@media (max-width: 600px) {
+@media (max-width: 37.5em) {
   p {
     font-size: 1.15em;
   }
@@ -205,7 +207,7 @@ button:disabled {
   background: url('/images/hero-bg.jpg') #e5db40 center top no-repeat;
   background-size: cover;
 }
-@media (max-width: 600px) {
+@media (max-width: 37.5em) {
   #hero {
     height: auto;
   }
@@ -216,7 +218,7 @@ header {
   background: #e5db40;
   transition: height 300ms, box-shadow 300ms;
 }
-@media (max-width: 600px) {
+@media (max-width: 37.5em) {
   header {
     display: none;
   }
@@ -249,7 +251,7 @@ header nav ul li {
   line-height: 7vh;
   transition: line-height 300ms;
 }
-@media (min-width: 600px) {
+@media (min-width: 37.5em) {
   header nav ul li {
     float: left;
     width: 20%;
@@ -279,13 +281,13 @@ header.stuck {
   padding-right: 1em;
   box-sizing: border-box;
 }
-@media (min-width: 600px) {
+@media (min-width: 37.5em) {
   #details #leo-carrillo {
     float: left;
     width: 50%;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 37.5em) {
   #details #leo-carrillo figure {
     margin-bottom: 2em;
   }
@@ -296,7 +298,7 @@ header.stuck {
   padding-right: 1em;
   box-sizing: border-box;
 }
-@media (min-width: 600px) {
+@media (min-width: 37.5em) {
   #details #venue-description {
     float: left;
     width: 50%;
@@ -306,9 +308,15 @@ header.stuck {
   margin-top: 0;
 }
 #travel h4 {
-  font: 700 36px 'franklin-gothic-ext-comp-urw', Helvetica, Arial, sans-serif;
+  font: 700 20px 'franklin-gothic-ext-comp-urw', Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   margin: 0 auto .5em;
+}
+@media (min-width: 37.5em) {
+  #travel h4 {
+    font-size: 2.25em;
+    /* 36/16 */
+  }
 }
 #hotels {
   margin-left: -1em;
@@ -330,13 +338,13 @@ header.stuck {
   padding-right: 1em;
   box-sizing: border-box;
 }
-@media (min-width: 600px) {
+@media (min-width: 37.5em) {
   #hotels figure {
     float: left;
     width: 33.33333333%;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 37.5em) {
   #hotels figure {
     margin-bottom: 2em;
   }
@@ -376,13 +384,13 @@ header.stuck {
   padding-right: 1em;
   box-sizing: border-box;
 }
-@media (min-width: 600px) {
+@media (min-width: 37.5em) {
   #bus #bus-pitch {
     float: left;
     width: 66.66666667%;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 37.5em) {
   #bus #bus-pitch {
     margin-bottom: 2em;
   }
@@ -396,7 +404,7 @@ form#bus-signup {
   padding-right: 1em;
   box-sizing: border-box;
 }
-@media (min-width: 600px) {
+@media (min-width: 37.5em) {
   form#bus-signup {
     float: left;
     width: 33.33333333%;
@@ -410,6 +418,30 @@ form#bus-signup p {
 }
 form#bus-signup .error {
   color: red;
+}
+#wedding-party h3 {
+  background: #949494;
+  color: #ffffff;
+  border: none;
+  margin-bottom: 0;
+  padding: 15px 1em;
+}
+#wedding-party h3 span {
+  font: 700 16px 'franklin-gothic-ext-comp-urw', Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+}
+@media (min-width: 37.5em) {
+  #wedding-party h3 span {
+    font-size: 24px;
+  }
+  #wedding-party h3 span.mobile {
+    display: none;
+  }
+}
+@media (max-width: 37.5em) {
+  #wedding-party h3 span.desktop {
+    display: none;
+  }
 }
 #bio {
   padding: 2em;
@@ -473,7 +505,7 @@ form#bus-signup .error {
   box-sizing: border-box;
   cursor: pointer;
 }
-@media (min-width: 600px) {
+@media (min-width: 37.5em) {
   #bridesmaids .bridesmaid,
   #groomsmen .bridesmaid,
   #bridesmaids .groomsman,
@@ -517,7 +549,7 @@ form#bus-signup .error {
   transition: opacity 300ms;
   z-index: 999;
 }
-@media (min-width: 600px) {
+@media (min-width: 37.5em) {
   #bridesmaids .bridesmaid div,
   #groomsmen .bridesmaid div,
   #bridesmaids .groomsman div,
@@ -547,7 +579,7 @@ form#bus-signup .error {
   font: 18px 'bistro-script-web', sans-serif;
   margin-bottom: -3px;
 }
-@media (max-width: 600px) {
+@media (max-width: 37.5em) {
   #bridesmaids .bridesmaid div h4,
   #groomsmen .bridesmaid div h4,
   #bridesmaids .groomsman div h4,
@@ -563,7 +595,7 @@ form#bus-signup .error {
   text-transform: uppercase;
   line-height: 1em;
 }
-@media (max-width: 600px) {
+@media (max-width: 37.5em) {
   #bridesmaids .bridesmaid div h5,
   #groomsmen .bridesmaid div h5,
   #bridesmaids .groomsman div h5,
@@ -579,7 +611,7 @@ form#bus-signup .error {
   /* 12/16 */
   line-height: 1.4;
 }
-@media (min-width: 600px) {
+@media (min-width: 37.5em) {
   #bridesmaids .bridesmaid div p,
   #groomsmen .bridesmaid div p,
   #bridesmaids .groomsman div p,
@@ -587,7 +619,7 @@ form#bus-signup .error {
     display: none;
   }
 }
-@media (min-width: 600px) {
+@media (min-width: 37.5em) {
   #bridesmaids .bridesmaid:hover div,
   #groomsmen .bridesmaid:hover div,
   #bridesmaids .groomsman:hover div,
@@ -601,7 +633,7 @@ form#bus-signup .error {
     opacity: 1;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 37.5em) {
   #bridesmaids .bridesmaid.selected div,
   #groomsmen .bridesmaid.selected div,
   #bridesmaids .groomsman.selected div,
@@ -622,13 +654,14 @@ form#bus-signup .error {
 #big-ass-hashtag {
   margin: 0;
   line-height: 1em;
-  font: 700 40px 'franklin-gothic-ext-comp-urw', Helvetica, Arial, sans-serif;
+  font: 700 2.25em 'franklin-gothic-ext-comp-urw', Helvetica, Arial, sans-serif;
+  /* 36/16 */
   text-transform: uppercase;
 }
 #big-ass-hashtag a {
   color: #e5db40;
 }
-@media (min-width: 600px) {
+@media (min-width: 37.5em) {
   #big-ass-hashtag a {
     cursor: default;
   }
@@ -636,7 +669,7 @@ form#bus-signup .error {
 #big-ass-hashtag a:before {
   display: none;
 }
-@media (min-width: 600px) {
+@media (min-width: 37.5em) {
   #big-ass-hashtag {
     font-size: 6em;
     /* 96/16 */

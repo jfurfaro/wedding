@@ -12,8 +12,8 @@
 @text-color: #3c3c3c;
 @error: #f00;
 
-@mobile: 600px;
-@tablet: 800px;
+@mobile: 37.5em; /* 600/16 */
+@tablet: 50em; /* 800/16 */
 
 // END VARIABLES
 // --------------------------------------------------
@@ -378,9 +378,13 @@ header {
 
 #travel {
 	h4 {
-		font: 700 36px @headline;
+		font: 700 20px @headline;
 		text-transform: uppercase;
 		margin: 0 auto .5em;
+
+		@media (min-width: @mobile) {
+			font-size: 2.25em; /* 36/16 */
+		}
 	}
 }
 
@@ -455,7 +459,32 @@ form#bus-signup {
 // WEDDING PARTY
 
 #wedding-party {
+	h3 {
+		background: darken(@gray, 30%);
+		color: @white;
+		border: none;
+		margin-bottom: 0;
+		padding: 15px 1em;
 
+		span {
+			font: 700 16px @headline; 
+			text-transform: uppercase;
+
+			@media (min-width: @mobile) {
+				font-size: 24px;
+
+				&.mobile {
+					display: none;
+				}
+			}
+
+			@media (max-width: @mobile) {
+				&.desktop {
+					display: none;
+				}
+			}
+		}
+	}
 }
 
 #bio {
@@ -637,7 +666,7 @@ form#bus-signup {
 #big-ass-hashtag {
 	margin: 0;
 	line-height: 1em;
-	font: 700 40px @headline;
+	font: 700 2.25em @headline; /* 36/16 */
 	text-transform: uppercase;
 
 	a {
