@@ -137,6 +137,9 @@ address a:hover:before {
   background-color: #e5db40;
   bottom: 0;
 }
+.unclickable-email {
+  color: #e5db40;
+}
 input[type='text'] {
   -webkit-appearance: none;
   border-radius: 0;
@@ -269,7 +272,18 @@ header.stuck {
   box-shadow: 0 -3px 8px 2px #666666;
   z-index: 99999;
 }
-#details .hashtag {
+#details .instagram-link {
+  color: #e5db40;
+}
+@media (min-width: 37.5em) {
+  #details .instagram-link {
+    cursor: default;
+  }
+}
+#details .instagram-link:before {
+  display: none;
+}
+#details .instagram-link .hashtag {
   font-family: 'franklin-gothic-ext-comp-urw', Helvetica, Arial, sans-serif;
   font-weight: 700;
   text-transform: uppercase;

@@ -189,6 +189,10 @@ address {
 	}
 }
 
+.unclickable-email {
+	color: @chartreuse;
+}
+
 
 // END PAGE TYPOGRAPHY
 // --------------------------------------------------
@@ -343,11 +347,23 @@ header {
 
 #details {
 
-	.hashtag {
-		font-family: @headline;
-		font-weight: 700;
-		text-transform: uppercase;
+	.instagram-link {
 		color: @chartreuse;
+
+		@media (min-width: @mobile) {
+			cursor: default;
+		}
+
+		&:before {
+			display: none;
+		}
+
+		.hashtag {
+			font-family: @headline;
+			font-weight: 700;
+			text-transform: uppercase;
+			color: @chartreuse;
+		}
 	}
 
 	#leo-carrillo {
