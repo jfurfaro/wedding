@@ -401,7 +401,7 @@ header.stuck {
 @media (min-width: 37.5em) {
   #bus #bus-pitch {
     float: left;
-    width: 66.66666667%;
+    width: 100%;
   }
 }
 @media (max-width: 37.5em) {
