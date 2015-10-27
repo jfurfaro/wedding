@@ -1,0 +1,15 @@
+body.admin p[contentEditable] {
+  outline: 1px dashed rgba(128, 128, 128, 0.2);
+  outline-offset: 5px;
+  transition: outline 250ms;
+  cursor: text;
+}
+body.admin p[contentEditable]:hover {
+  outline-color: gray;
+}
+body.admin p[contentEditable]:focus {
+  outline: 2px solid aqua;
+}
+body.admin p[contentEditable] a {
+  cursor: text;
+}
