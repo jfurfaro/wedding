@@ -1,0 +1,20 @@
+body.admin {
+	p[contentEditable] {
+		outline: 1px dashed fade(gray, 20%);
+		outline-offset: 5px;
+		transition: outline 250ms;
+		cursor: text;
+
+		&:hover {
+			outline-color: gray;
+		}
+
+		&:focus {
+			outline: 2px solid aqua;
+		}
+
+		a {
+			cursor: text;
+		}
+	}
+}

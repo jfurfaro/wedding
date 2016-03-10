@@ -44,10 +44,40 @@ gulp.task('browserify', function(){
 		.pipe(livereload({ auto: false }));
 });
 
+gulp.task('compileLessAdmin', function(){
+	return gulp.src('src/admin.less')
+		.pipe(less().on('error', handleError))
+		// .pipe(autoprefix())
+		.pipe(gulp.dest('public/'))
+		.pipe(notify(function(file){return 'CSS Compiled'}))
+		.on('error', function(err){console.log(err.message)})
+		.pipe(livereload({ auto: false }));
+});
+
+gulp.task('browserifyAdmin', function(){
+	return browserify('src/admin.js', {paths: ['./node_modules']})
+		.bundle().on('error', handleError)
+		.pipe(source('admin.js'))
+		.pipe(buffer())
+		.pipe(uglify().on('error', handleError))
+		.pipe(gulp.dest('public/'))
+		.pipe(notify(function(file){return 'Admin JS Compiled'}))
+		.on('error', function(err){console.log(err.message)})
+		.pipe(livereload({ auto: false }));
+});
+
 gulp.task('default', function(){
 	livereload.listen();
 	gulp.watch('src/**.less', ['compileLess']);
 	gulp.watch('src/**.js', ['browserify']);
+	gulp.watch('src/**.hbs', livereload.changed);
+	console.log('\033[36m Watching Assets\033[39m');
+});
+
+gulp.task('admin', function(){
+	livereload.listen();
+	gulp.watch('src/**.less', ['compileLessAdmin']);
+	gulp.watch('src/**.js', ['browserifyAdmin']);
 	gulp.watch('src/**.hbs', livereload.changed);
 	console.log('\033[36m Watching Assets\033[39m');
 });
