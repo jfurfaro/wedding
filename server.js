@@ -30,7 +30,6 @@ app.use(bodyparser.urlencoded({extended: true}));
 app.use(bodyparser.json());
 
 app.get('/', function(req, res){
-	console.log(req.query);
 	if(!req.query.admin) {
 		res.status(200).render('index', {bride: 'Katie', groom: 'Joe'});
 	} else {
